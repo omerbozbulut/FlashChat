@@ -10,17 +10,21 @@ import UIKit
 import Firebase
 
 class LoginViewController: UIViewController {
-
+    
     @IBOutlet weak var emailTextfield: UITextField!
     @IBOutlet weak var passwordTextfield: UITextField!
     
-
+    
     @IBAction func loginPressed(_ sender: UIButton) {
         
         if let email = emailTextfield.text, let password = passwordTextfield.text{
             Auth.auth().signIn(withEmail: email, password: password) {authResult, error in
                 if let e = error {
-                    
+                    // Alert
+                    let alert = UIAlertController(title: nil, message: e.localizedDescription, preferredStyle: .alert)
+                    let action = UIAlertAction(title: "Okey", style: .default, handler: nil)
+                    alert.addAction(action)
+                    self.present(alert, animated: true, completion: nil)
                 }else{
                     // Logged in
                     self.performSegue(withIdentifier: "LoginToChat", sender: self)
