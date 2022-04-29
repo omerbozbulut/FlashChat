@@ -16,6 +16,7 @@
 		170364BB2818DCEF00EDD264 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170364B62818DCEF00EDD264 /* WelcomeViewController.swift */; };
 		170364BC2818DCEF00EDD264 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170364B72818DCEF00EDD264 /* LoginViewController.swift */; };
 		170364BD2818DCEF00EDD264 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170364B82818DCEF00EDD264 /* RegisterViewController.swift */; };
+		17807489281B835D00F7C884 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 17807488281B835D00F7C884 /* GoogleService-Info.plist */; };
 		32C4718B9BFDEDE75013D956 /* Pods_FlashChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8277EF3A958DB5E5A62CE73 /* Pods_FlashChat.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		170364B62818DCEF00EDD264 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		170364B72818DCEF00EDD264 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		170364B82818DCEF00EDD264 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		17807488281B835D00F7C884 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6552C050C9C2743A83B22682 /* Pods-FlashChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlashChat.debug.xcconfig"; path = "Target Support Files/Pods-FlashChat/Pods-FlashChat.debug.xcconfig"; sourceTree = "<group>"; };
 		C8277EF3A958DB5E5A62CE73 /* Pods_FlashChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlashChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDDDF608EA20DEA527F473CA /* Pods-FlashChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlashChat.release.xcconfig"; path = "Target Support Files/Pods-FlashChat/Pods-FlashChat.release.xcconfig"; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 				1703649B2818DBE500EDD264 /* SceneDelegate.swift */,
 				170364A22818DBE700EDD264 /* Assets.xcassets */,
 				170364A72818DBE700EDD264 /* Info.plist */,
+				17807488281B835D00F7C884 /* GoogleService-Info.plist */,
 			);
 			path = FlashChat;
 			sourceTree = "<group>";
@@ -115,7 +118,6 @@
 				6552C050C9C2743A83B22682 /* Pods-FlashChat.debug.xcconfig */,
 				DDDDF608EA20DEA527F473CA /* Pods-FlashChat.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -188,6 +190,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				170364B92818DCEF00EDD264 /* LaunchScreen.storyboard in Resources */,
+				17807489281B835D00F7C884 /* GoogleService-Info.plist in Resources */,
 				170364A32818DBE700EDD264 /* Assets.xcassets in Resources */,
 				170364B02818DCCB00EDD264 /* Main.storyboard in Resources */,
 			);
