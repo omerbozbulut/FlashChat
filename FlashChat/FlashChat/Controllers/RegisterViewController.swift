@@ -20,9 +20,11 @@ class RegisterViewController: UIViewController {
             
             Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
                 if let err = error{
-                    print(err)
+                    
+                    
+                    
                 }else{
-                    // başarıyla kayıt olduysa
+                    // user created
                     self.performSegue(withIdentifier: "RegisterToChat", sender: self)
                 }
           
@@ -30,4 +32,6 @@ class RegisterViewController: UIViewController {
     }
     
 }
+    
+    
 }
