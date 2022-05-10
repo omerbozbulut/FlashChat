@@ -31,7 +31,7 @@ class ChatViewController: UIViewController{
     
     func loadMessages(){
         
-        db.collection(K.FStore.collectionName).addSnapshotListener{ (querySnapshot, err) in
+        db.collection(K.FStore.collectionName).order(by: K.FStore.dateField).addSnapshotListener{ (querySnapshot, err) in
             self.messages = []
             if let e = err {
                 print("Error getting documents: \(e)")
@@ -39,6 +39,7 @@ class ChatViewController: UIViewController{
                 if let snapshotDoc = querySnapshot?.documents{
                     for doc in snapshotDoc{
                         let data = doc.data()
+                        
                         if let body = data[K.FStore.bodyField] as? String,
                            let sender = data[K.FStore.senderField] as? String{
                             let message = Message(sender: sender, body: body)
@@ -61,7 +62,8 @@ class ChatViewController: UIViewController{
            let messageSenderEmail = Auth.auth().currentUser?.email{
             db.collection(K.FStore.collectionName).addDocument(data: [
                 K.FStore.bodyField: messageBody,
-                K.FStore.senderField: messageSenderEmail
+                K.FStore.senderField: messageSenderEmail,
+                K.FStore.dateField: Date().timeIntervalSince1970
             ]) { error in
                 if let error = error {
                     print("Error adding document: \(error)")
