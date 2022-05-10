@@ -82,13 +82,13 @@
 				170364B12818DCEF00EDD264 /* Base.lproj */,
 				170364B42818DCEF00EDD264 /* Controllers */,
 				170364AD2818DCCB00EDD264 /* Views */,
+				177818C92824557E002765C1 /* Models */,
 				170364992818DBE500EDD264 /* AppDelegate.swift */,
 				1703649B2818DBE500EDD264 /* SceneDelegate.swift */,
 				170364A22818DBE700EDD264 /* Assets.xcassets */,
 				170364A72818DBE700EDD264 /* Info.plist */,
 				17807488281B835D00F7C884 /* GoogleService-Info.plist */,
 				177818C528243DA1002765C1 /* Constants.swift */,
-				177818C92824557E002765C1 /* Models */,
 			);
 			path = FlashChat;
 			sourceTree = "<group>";
