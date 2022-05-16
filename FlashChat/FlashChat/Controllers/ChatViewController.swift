@@ -47,6 +47,10 @@ class ChatViewController: UIViewController{
                             
                             DispatchQueue.main.async {
                                 self.tableView.reloadData()
+                            
+                                // scroll
+                                let indexPath = IndexPath(row: self.messages.count-1, section: 0)
+                                self.tableView.scrollToRow(at: indexPath, at: .top, animated: true)
                             }
                         }
                     }
@@ -68,7 +72,10 @@ class ChatViewController: UIViewController{
                 if let error = error {
                     print("Error adding document: \(error)")
                 }else{
-                    print("Successfully saved data")
+                    // closure içinde view güncellediğimiz için main thread
+                    DispatchQueue.main.async {
+                        self.messageTextfield.text = ""
+                    }
                 }
             }
 
@@ -96,10 +103,31 @@ extension ChatViewController : UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let message = messages[indexPath.row]
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: K.cellIdentifier, for: indexPath) as! MessageCell
         
-        cell.label.text = messages[indexPath.row].body
+        if message.sender == Auth.auth().currentUser?.email{
+            cell.leftImageView.isHidden = true
+            cell.rightImageView.isHidden = false
+            cell.messageBubble.backgroundColor = UIColorFromRGB(rgbValue: 0x92B4EC)
+        }else{
+            cell.leftImageView.isHidden = false
+            cell.rightImageView.isHidden = true
+        }
+        
+        cell.label.text = message.body
         return cell
+    }
+    
+    func UIColorFromRGB(rgbValue: UInt) -> UIColor {
+        return UIColor(
+            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
+            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
+            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
+            alpha: CGFloat(1.0)
+        )
     }
     
 }
